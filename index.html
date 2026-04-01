@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Six7 | Мод-Меню 2026 — Anti-Ban, Aimbot, God Mode и всё разблокировано</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0c12, #030507);
+            font-family: 'Inter', sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            backdrop-filter: blur(2px);
+        }
+
+        /* header */
+        .hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #c4b5fd;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #a78bfa, #ec489a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .sub {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* video section */
+        .video-section {
+            margin-bottom: 3rem;
+            background: rgba(15, 20, 30, 0.6);
+            border-radius: 2rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
+            border: none;
+        }
+
+        .video-caption {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #8b9bb5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .video-caption i {
+            font-style: normal;
+            font-size: 1rem;
+        }
+
+        /* download button */
+        .download-area {
+            text-align: center;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .btn-download {
+            background: linear-gradient(95deg, #7c3aed, #db2777);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: inherit;
+            color: white;
+            border-radius: 60px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-download:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(124, 58, 237, 0.6);
+            background: linear-gradient(95deg, #8b5cf6, #ec489a);
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        /* features grid */
+        .features-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2rem 0 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-left: 4px solid #a855f7;
+            padding-left: 1rem;
+        }
+
+        .features-title span {
+            background: linear-gradient(135deg, #e2e8f0, #c084fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 1.9rem;
+        }
+
+        .stats {
+            font-size: 0.9rem;
+            background: #1e1f2e80;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            color: #cbd5e6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 0.9rem;
+            background: rgba(10, 14, 23, 0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 1.8rem;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .feature-item {
+            background: rgba(25, 32, 44, 0.7);
+            border-radius: 1.2rem;
+            padding: 0.7rem 1.2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(2px);
+        }
+
+        .feature-item:hover {
+            background: rgba(79, 70, 229, 0.2);
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateX(4px);
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 2px #a855f7);
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .feature-text {
+            flex: 1;
+            letter-spacing: -0.2px;
+        }
+
+        .feature-text strong {
+            font-weight: 700;
+            color: #f0f3fa;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, #ec489a, transparent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem;
+            font-size: 0.8rem;
+            color: #5b6e8c;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .features-grid {
+                padding: 1rem;
+                gap: 0.7rem;
+            }
+            .feature-item {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .btn-download {
+                padding: 0.8rem 1.8rem;
+                font-size: 1.1rem;
+            }
+            .video-section {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="badge">⚡ UNREAL ENGINE 5 | 2026 EDITION</div>
+        <h1>Лучшее Мод–Меню 2026 | Six7</h1>
+        <div class="sub">Максимальный контроль • Anti-Cheat Bypass • Невидимость • Краш-защита</div>
+    </div>
+
+    <!-- ВИДЕО на самом сайте (встроенный плеер Google Drive) -->
+    <div class="video-section">
+        <div class="video-wrapper">
+            <iframe 
+                src="https://drive.google.com/file/d/1E8NZkThYf-IE10ToKJEJxMb4fjJgkZdvQcZ7j9n1EsU/preview" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen 
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                title="Six7 Mod Menu демонстрация">
+            </iframe>
+        </div>
+        <div class="video-caption">
+            <i>🎬</i> Превью мод-меню | Все функции в действии — Anti-Ban, God Mode, Aimbot, ESP
+        </div>
+    </div>
+
+    <!-- Кнопка СКАЧИВАНИЯ (ссылка MEGA, открывается скачивание) -->
+    <div class="download-area">
+        <a href="https://mega.nz/file/R7JFVQ5a#Fxkq56I52Np-0tRbY8jKVBiUXrDzFDWO2UAUMbYRUZc" 
+           class="btn-download" 
+           target="_blank" 
+           rel="noopener noreferrer">
+            ⚡ СКАЧАТЬ МОД (MEGA) ⚡
+        </a>
+        <p style="font-size: 0.75rem; margin-top: 12px; opacity: 0.7;">🔒 Без пароля | Последняя версия Six7 2026</p>
+    </div>
+
+    <!-- ПОЛНЫЙ СПИСОК ФУНКЦИЙ (текст не изменён, все пункты сохранены) -->
+    <div class="features-title">
+        <span>✨ ВСЕ ВОЗМОЖНОСТИ МЕНЮ</span>
+        <div class="stats">🔥 60+ функций | Anti-Ban + Anti-Kick</div>
+    </div>
+
+    <div class="features-grid">
+        <!-- точный список, скопированный из описания (ничего не изменено, сохранены повторы и стиль) -->
+        <div class="feature-item"><div class="feature-icon">🛡️</div><div class="feature-text"><strong>Anti-Ban</strong> — анти бан</div></div>
+        <div class="feature-item"><div class="feature-icon">🚫</div><div class="feature-text"><strong>Anti-Kick</strong> — анти кик</div></div>
+        <div class="feature-item"><div class="feature-icon">🆔</div><div class="feature-text"><strong>Fake your account ID</strong> — изменить ID аккаунта</div></div>
+        <div class="feature-item"><div class="feature-icon">🔓</div><div class="feature-text"><strong>Bypass Password</strong> — вход без пароля</div></div>
+        <div class="feature-item"><div class="feature-icon">🎯</div><div class="feature-text"><strong>Aimbot</strong> — автонаведение</div></div>
+        <div class="feature-item"><div class="feature-icon">🔫</div><div class="feature-text"><strong>Infinite Ammo</strong> — бесконечные патроны</div></div>
+        <div class="feature-item"><div class="feature-icon">⚡</div><div class="feature-text"><strong>Fire Rate</strong> — скорострельность</div></div>
+        <div class="feature-item"><div class="feature-icon">💀</div><div class="feature-text"><strong>Kill Others</strong> — быстрые убийства</div></div>
+        <div class="feature-item"><div class="feature-icon">👁️</div><div class="feature-text"><strong>Field of View</strong> — настройка поля зрения</div></div>
+        <div class="feature-item"><div class="feature-icon">🦘</div><div class="feature-text"><strong>Jump Height</strong> — высота прыжка</div></div>
+        <div class="feature-item"><div class="feature-icon">🏃</div><div class="feature-text"><strong>Player Speed</strong> — скорость игрока</div></div>
+        <div class="feature-item"><div class="feature-icon">✏️</div><div class="feature-text"><strong>Set Name</strong> — изменить ник</div></div>
+        <div class="feature-item"><div class="feature-icon">📏</div><div class="feature-text"><strong>ESP Distance</strong> — показывать расстояние до целей</div></div>
+        <div class="feature-item"><div class="feature-icon">📦</div><div class="feature-text"><strong>Box ESP</strong> — рамки вокруг объектов</div></div>
+        <div class="feature-item"><div class="feature-icon">❤️</div><div class="feature-text"><strong>Health Bar ESP</strong> — полоски здоровья</div></div>
+        <div class="feature-item"><div class="feature-icon">🚗</div><div class="feature-text"><strong>Car ESP</strong> — подсветка машин</div></div>
+        <div class="feature-item"><div class="feature-icon">✈️</div><div class="feature-text"><strong>Plane ESP</strong> — подсветка самолётов</div></div>
+        <div class="feature-item"><div class="feature-icon">👑</div><div class="feature-text"><strong>God Mode</strong> — бессмертие</div></div>
+        <div class="feature-item"><div class="feature-icon">🧱</div><div class="feature-text"><strong>No Clip</strong> — проход сквозь стены</div></div>
+        <div class="feature-item"><div class="feature-icon">🕊️</div><div class="feature-text"><strong>Fly</strong> — полёт</div></div>
+        <div class="feature-item"><div class="feature-icon">👻</div><div class="feature-text"><strong>Invisible Mode</strong> — невидимость</div></div>
+        <div class="feature-item"><div class="feature-icon">🦘</div><div class="feature-text"><strong>Jump Height</strong> — высота прыжка</div></div>
+        <div class="feature-item"><div class="feature-icon">💨</div><div class="feature-text"><strong>Speed</strong> — скорость</div></div>
+        <div class="feature-item"><div class="feature-icon">💊</div><div class="feature-text"><strong>Auto Heal</strong> — авто-лечение</div></div>
+        <div class="feature-item"><div class="feature-icon">📏</div><div class="feature-text"><strong>Size Changer</strong> — изменение размера игрока (визуально)</div></div>
+        <div class="feature-item"><div class="feature-icon">🔫</div><div class="feature-text"><strong>Infinite Ammo</strong> — бесконечные патроны</div></div>
+        <div class="feature-item"><div class="feature-icon">⚡</div><div class="feature-text"><strong>Fire Rate</strong> — скорострельность</div></div>
+        <div class="feature-item"><div class="feature-icon">💥</div><div class="feature-text"><strong>One Shot</strong> — убийство с одного выстрела</div></div>
+        <div class="feature-item"><div class="feature-icon">🎯</div><div class="feature-text"><strong>AimBot</strong> — попадания без прицеливания</div></div>
+        <div class="feature-item"><div class="feature-icon">🧿</div><div class="feature-text"><strong>Ignore Walls</strong> — стрельба сквозь стены</div></div>
+        <div class="feature-item"><div class="feature-icon">⏳</div><div class="feature-text"><strong>Time Changer</strong> — изменение времени</div></div>
+        <div class="feature-item"><div class="feature-icon">📦</div><div class="feature-text"><strong>Spawn Props</strong> — спавн объектов</div></div>
+        <div class="feature-item"><div class="feature-icon">🗑️</div><div class="feature-text"><strong>Remove Props</strong> — удалить все объекты</div></div>
+        <div class="feature-item"><div class="feature-icon">❄️</div><div class="feature-text"><strong>Freeze Players</strong> — заморозить игроков</div></div>
+        <div class="feature-item"><div class="feature-icon">💣</div><div class="feature-text"><strong>Crash Server</strong> — краш сервера</div></div>
+        <div class="feature-item"><div class="feature-icon">👥</div><div class="feature-text"><strong>Max Player Count</strong> — изменить максимальное количество игроков на сервере</div></div>
+        <div class="feature-item"><div class="feature-icon">💾</div><div class="feature-text"><strong>Save Map</strong> — сохранить карту</div></div>
+        <div class="feature-item"><div class="feature-icon">🐉</div><div class="feature-text"><strong>Infinite Ammo</strong> — бесконечные патроны для танка</div></div>
+        <div class="feature-item"><div class="feature-icon">🔑</div><div class="feature-text"><strong>Unlock Vehicle</strong> — открыть транспорт другого игрока</div></div>
+        <div class="feature-item"><div class="feature-icon">🏁</div><div class="feature-text"><strong>Max Speed</strong> — максимальная скорость</div></div>
+        <div class="feature-item"><div class="feature-icon">🛡️</div><div class="feature-text"><strong>No Damage Vehicle</strong> — транспорт не ломается</div></div>
+        <div class="feature-item"><div class="feature-icon">💬</div><div class="feature-text"><strong>Spam Chat</strong> — спам сообщением в чате</div></div>
+        <div class="feature-item"><div class="feature-icon">👑</div><div class="feature-text"><strong>Fake Admin</strong> — фейковый админ в нике</div></div>
+        <div class="feature-item"><div class="feature-icon">🔊</div><div class="feature-text"><strong>Sound Spam</strong> — спам звуками машин</div></div>
+        <div class="feature-item"><div class="feature-icon">🎭</div><div class="feature-text"><strong>Clone Player</strong> — клонировать скин и ник игрока</div></div>
+        <div class="feature-item"><div class="feature-icon">👢</div><div class="feature-text"><strong>Kick Player</strong> — кик игрока</div></div>
+        <div class="feature-item"><div class="feature-icon">💥</div><div class="feature-text"><strong>Crash Player</strong> — краш игры игрока</div></div>
+        <div class="feature-item"><div class="feature-icon">🎮</div><div class="feature-text"><strong>Steal Host</strong> — забрать хост</div></div>
+        <div class="feature-item"><div class="feature-icon">📈</div><div class="feature-text"><strong>FPS Boost</strong> — оптимизация FPS</div></div>
+        <div class="feature-item"><div class="feature-icon">🌫️</div><div class="feature-text"><strong>Remove fog</strong> — убрать туман</div></div>
+        <div class="feature-item"><div class="feature-icon">☀️</div><div class="feature-text"><strong>Full Bright</strong> — максимальная яркость</div></div>
+        <div class="feature-item"><div class="feature-icon">🚫📢</div><div class="feature-text"><strong>Remove all ads</strong> — удалить всю рекламу</div></div>
+        <div class="feature-item"><div class="feature-icon">💰</div><div class="feature-text"><strong>Infinite money</strong> — бесконечные деньги</div></div>
+        <div class="feature-item"><div class="feature-icon">💎</div><div class="feature-text"><strong>Infinite gems</strong> — бесконечные гемы (визуально)</div></div>
+        <div class="feature-item"><div class="feature-icon">💎</div><div class="feature-text"><strong>Free VIP</strong> — бесплатный VIP</div></div>
+        <div class="feature-item"><div class="feature-icon">👥</div><div class="feature-text"><strong>15 Player server</strong> — сервер на 15 игроков</div></div>
+        <div class="feature-item"><div class="feature-icon">🔓</div><div class="feature-text"><strong>Everything unlocked</strong> — всё разблокировано</div></div>
+    </div>
+
+    <hr />
+    <footer>
+        © Six7 2026 — Лучшее мод-меню с полной защитой и читами для мультиплеера | Anti-Ban, God Mode, Aimbot, Unlimited Ammo, ESP, Fly, NoClip<br>
+        Версия 4.2.0 | Поддержка последнего патча | Не требует рут/джейлбрейк
+    </footer>
+</div>
+</body>
+</html>
