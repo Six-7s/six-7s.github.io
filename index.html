@@ -1,19 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Six7 • Language Selector | Mod Menu 2026</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJN2F4EE7B"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-CJN2F4EE7B');
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <title>Установка приложений</title>
     <style>
         * {
             margin: 0;
@@ -22,252 +12,211 @@
         }
 
         body {
-            background: radial-gradient(circle at 30% 10%, #0a0c12, #020407);
-            font-family: 'Inter', sans-serif;
-            color: #eef2ff;
+            background: linear-gradient(145deg, #f0f4f8 0%, #d9e2ec 100%);
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            padding: 20px;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            line-height: 1.5;
-            padding: 2rem 1.5rem;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 500px;
+            width: 100%;
             margin: 0 auto;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        /* header & hero */
-        .hero {
+        .header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 32px;
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(139, 92, 246, 0.5);
-            padding: 0.35rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
+        .header h1 {
+            font-size: 28px;
             font-weight: 600;
-            letter-spacing: 1px;
-            color: #c4b5fd;
-            margin-bottom: 1.2rem;
+            color: #1a2c3e;
+            letter-spacing: -0.3px;
+            background: rgba(255,255,255,0.7);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff, #b78eff, #f472b6);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.02em;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            color: #9ca8c2;
-            max-width: 550px;
-            margin: 0 auto 0.5rem;
-        }
-
-        .highlight {
-            color: #c084fc;
-            font-weight: 500;
-        }
-
-        /* selector card */
-        .selector-card {
-            background: rgba(12, 17, 26, 0.65);
-            backdrop-filter: blur(12px);
-            border-radius: 2.5rem;
-            padding: 2rem 2rem 2.2rem;
-            margin: 2rem auto;
-            max-width: 780px;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6);
-            transition: all 0.2s ease;
-        }
-
-        .selector-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(120deg, #e0e7ff, #c084fc);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .desc {
-            text-align: center;
-            color: #a5b4cf;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .lang-grid {
+        .card {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.8rem;
-            margin: 2rem 0 1rem;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .lang-btn {
-            background: linear-gradient(115deg, #1e293b, #0f172a);
-            border: 1px solid rgba(139, 92, 246, 0.5);
-            border-radius: 2rem;
-            padding: 1.2rem 2rem;
-            min-width: 220px;
-            text-decoration: none;
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            background: #eef2fa;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
-            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: inset 0 1px 2px #ffffff80, 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .info h2 {
+            font-size: 20px;
             font-weight: 700;
-            color: #f1f5f9;
-            transition: all 0.25s ease;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-            letter-spacing: -0.2px;
+            color: #0f2b3d;
+            margin-bottom: 6px;
         }
 
-        .lang-btn span {
-            font-size: 1.8rem;
+        .info p {
+            font-size: 14px;
+            color: #5b6f82;
+            margin-bottom: 8px;
         }
 
-        .lang-btn:hover {
-            transform: translateY(-4px);
-            background: linear-gradient(115deg, #2d3a52, #1a2335);
-            border-color: #a855f7;
-            box-shadow: 0 16px 28px -8px rgba(139, 92, 246, 0.4);
+        .version {
+            font-size: 12px;
+            color: #8a9bb0;
+            background: #f0f4fa;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 30px;
         }
 
-        .lang-btn:active {
-            transform: translateY(2px);
-        }
-
-        .feature-preview {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-top: 2.2rem;
-            padding-top: 1rem;
-            border-top: 1px dashed rgba(139, 92, 246, 0.3);
-        }
-
-        .preview-chip {
-            background: rgba(25, 32, 44, 0.7);
+        .download-btn {
+            background: #1e88e5;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
             border-radius: 40px;
-            padding: 0.3rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #c4b5fd;
-            backdrop-filter: blur(2px);
-            border: 0.5px solid rgba(139, 92, 246, 0.3);
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
         }
 
-        /* footer */
-        footer {
-            text-align: center;
-            padding: 2rem 0.5rem 0.8rem;
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #5b6e8c;
-            border-top: 1px solid rgba(139, 92, 246, 0.15);
+        .download-btn:active {
+            transform: scale(0.96);
+            background: #0b5e9e;
         }
 
         .footer-note {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            font-size: 0.75rem;
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 1.2rem;
-            }
-            h1 {
-                font-size: 2.3rem;
-            }
-            .lang-btn {
-                min-width: 180px;
-                padding: 1rem 1.4rem;
-                font-size: 1.2rem;
-            }
-            .selector-card {
-                padding: 1.5rem;
-            }
-            .selector-title {
-                font-size: 1.5rem;
-            }
+            text-align: center;
+            margin-top: 32px;
+            font-size: 13px;
+            color: #4a627a;
+            background: rgba(255,255,240,0.8);
+            padding: 12px;
+            border-radius: 28px;
+            backdrop-filter: blur(2px);
         }
 
         @media (max-width: 480px) {
-            .lang-grid {
-                gap: 1rem;
-                flex-direction: column;
-                align-items: stretch;
+            .card {
+                padding: 16px;
             }
-            .lang-btn {
-                width: 100%;
-                justify-content: center;
+            .icon {
+                width: 52px;
+                height: 52px;
+                border-radius: 18px;
+            }
+            .download-btn {
+                padding: 8px 16px;
+                font-size: 13px;
             }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="hero">
-        <div class="badge">⚡ UNREAL ENGINE 5 | 2026 EDITION</div>
-        <h1>Six7 Mod Menu</h1>
-        <div class="tagline">Maximum power · <span class="highlight">Anti-Ban</span> · <span class="highlight">God Mode</span> · <span class="highlight">Aimbot</span> · ESP + 60+ features</div>
+    <div class="header">
+        <h1>📱 Установка ПО</h1>
     </div>
 
-    <div class="selector-card">
-        <div class="selector-title">🌐 choose your language</div>
-        <div class="desc">Select preferred language to access the full mod menu interface & cheats.<br>Instant redirect to official Six7 portal.</div>
-
-        <div class="lang-grid">
-            <a href="https://six-7s.github.io/en" class="lang-btn" target="_self" rel="noopener noreferrer">
-                <span>🇺🇸</span> ENGLISH
-            </a>
-            <a href="https://six-7s.github.io/ru" class="lang-btn" target="_self" rel="noopener noreferrer">
-                <span>🇷🇺</span> РУССКИЙ
-            </a>
+    <!-- Секундомер v1.1.2 -->
+    <div class="card">
+        <div class="icon">
+            <img src="icons/stopwatch.png" alt="лого секундомера" onerror="this.onerror=null; this.parentElement.innerHTML='⏱️';">
         </div>
-
-        <div class="feature-preview">
-            <span class="preview-chip">🛡️ Anti-Ban</span>
-            <span class="preview-chip">👑 God Mode</span>
-            <span class="preview-chip">🎯 Aimbot</span>
-            <span class="preview-chip">🔫 Infinite Ammo</span>
-            <span class="preview-chip">🕊️ Fly / NoClip</span>
-            <span class="preview-chip">📦 ESP & Boxes</span>
-            <span class="preview-chip">💎 Everything Unlocked</span>
+        <div class="info">
+            <h2>Секундомер</h2>
+            <p>Точный хронометраж, замеры интервалов, лапы. Минимализм и надёжность.</p>
+            <span class="version">версия 1.1.2</span>
         </div>
+        <button class="download-btn" data-apk="apk/sekundomer_v1.1.2.apk">⬇️ Скачать</button>
     </div>
 
-    <footer>
-        <div class="footer-note">
-            <span>© Six7 2026 — Next‑gen mod menu with full protection & multiplayer cheats</span>
+    <!-- BluePrint Editor v1.3.2 -->
+    <div class="card">
+        <div class="icon">
+            <img src="icons/blueprint.png" alt="лого BluePrint Editor" onerror="this.onerror=null; this.parentElement.innerHTML='📐';">
         </div>
-        <div style="margin-top: 8px; opacity: 0.6;">Version 4.2.0 | No root/jailbreak | Latest patch support</div>
-    </footer>
+        <div class="info">
+            <h2>BluePrint Editor</h2>
+            <p>Редактор чертежей и схем. Удобные инструменты для проектирования.</p>
+            <span class="version">версия 1.3.2</span>
+        </div>
+        <button class="download-btn" data-apk="apk/blueprint_v1.3.2.apk">⬇️ Скачать</button>
+    </div>
+
+    <!-- Здесь будет место для новых приложений. Просто скопируйте блок .card и измените данные -->
+
+    <div class="footer-note">
+        🔒 Все приложения проходят проверку на безопасность.<br>
+        ⚠️ Разрешите установку из неизвестных источников в настройках Android (если потребуется).
+    </div>
 </div>
+
+<script>
+    function downloadApk(fileName) {
+        const link = document.createElement('a');
+        link.href = fileName;
+        link.download = fileName.split('/').pop(); // имя файла из пути
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    document.querySelectorAll('.download-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const apkFile = btn.getAttribute('data-apk');
+            if (apkFile) {
+                downloadApk(apkFile);
+            } else {
+                alert('Файл не найден. Сообщите разработчику.');
+            }
+        });
+    });
+</script>
 </body>
 </html>
